@@ -2,6 +2,9 @@ const axios = require('axios')
 const iconv = require('iconv-lite')
 const cheerio = require("cheerio");
 const log = console.log;
+
+const express = require('express')
+const app = express()
  
 
 
@@ -72,4 +75,11 @@ function sw() {
 
 }
 
-setInterval(sw, 2000) // 5 sec interval
+// setInterval(sw, 2000) // 5 sec interval
+app.listen(8080, ()=>{
+  console.log('listen on 80')
+})
+
+app.get('/', (req, res)=>{
+  res.send('Hello')
+})
